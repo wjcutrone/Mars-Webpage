@@ -22,12 +22,47 @@
         <div class="row">
             <div class="col-md-12">
                 <h3>Latest Mars News</h3>
-                <h5>{{mars_facts.p_data.title}}</h5>
-                <h5>{{mars_facts.paragraph}}</h5>
+                <h5>{{mars_facts.title}}</h5>
+                <p>{{mars_facts.paragraph}}</p>
+
             </div>
         </div>
     </div>
-
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <h3>Featured Mars Image</h3>
+                <img src="{{mars_facts.f_image}}">
+            </div>
+            <div class="col-md-4">
+                <h3> Mars Facts </h3>
+                <table> {{mars_facts.table_data}}</table>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Mars Hemispheres</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <p>hemispheres[0]</p>
+            </div>
+            <div class="col-md-6">
+                <p> hemispheres[1]</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <p> hemispheres[2]</p>
+            </div>
+            <div class="col-md-6">
+                <p> hemispheres[3]</p>
+            </div>
+        </div>
+    </div> -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>
