@@ -1,6 +1,7 @@
 from splinter import Browser
 from bs4 import BeautifulSoup
 from webdriver_manager.chrome import ChromeDriverManager
+import pandas as pd
 
 #Setup splinter
 def init_browser():
@@ -11,12 +12,16 @@ def init_browser():
 #Create a dictionary to store all results 
 def scrape():
     browser = init_browser()
+    # news_title, news_p = scrape_1(browser)
+    # news_title, news_p = mars_news(browser)
+
     data = {
         'p_data':scrape_1(browser),
         'f_image': scrape_2(browser),
         'table_data': scrape_3(browser),
         'hemispheres': scrape_4(browser)
     }
+    browser.quit()
     return data
 
 # Get most recent Mars story
@@ -26,15 +31,15 @@ def scrape_1(browser):
     #Collect the latest news title and paragraph test from Nasa's website
     html = browser.html
     soup = BeautifulSoup(html, 'html.parser')
-    element = soup.select_one('ul.item_list li.slide')
-    title_pod = element.find('div', class_='content_title')
-    news_title = title_pod.get_text()
-    #news_title = soup.find(title_pod.find('a')('target=_self'))
+    element = soup.select_one('div.list_text')
+    news_title = element.find('div', class_='content_title').get_text()
+    # news_title = title_pod.get_text()
     news_p = element.find('div', class_='article_teaser_body').get_text()
     return {
         'title':news_title,
         'paragraph': news_p
     }
+    
 
 #Get the featured Mars image
 def scrape_2(browser):
@@ -80,4 +85,6 @@ def scrape_4(browser):
         })
     return results
 
-scrape()
+if __name__ == "__main__":
+    # If running as script, print scraped data
+    print(scrape())
