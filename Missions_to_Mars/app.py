@@ -12,7 +12,7 @@ mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_app")
 def home():
     #find one record of data from the mongo database
     mars_facts = mongo.db.mars_facts.find_one()
-
+    # hem1 = hemispheres[0]
     #return the template
     return render_template("index.html", mars_facts = mars_facts)
 
