@@ -60,7 +60,7 @@ def scrape_3(browser):
     browser.visit(url)
     mars_facts=pd.read_html(browser.html)[0]
     mars_facts = mars_facts.rename(columns={0:'Description', 1:'Data'})
-    mars_table = mars_facts.to_html(index=False)
+    mars_table = mars_facts.to_html(index=False, classes="table table-striped table-bordered", justify="left")
     return mars_table
 
 #Get the Mars Hemispheres
