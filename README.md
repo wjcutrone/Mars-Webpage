@@ -1,4 +1,4 @@
-# Web-Scraping-Challenge
+# Scraping Mars
 This repository contains a web application that contains information and data related to the Mission to Mars via scraping various websites containing information about Missions to Mars. The work began in the the Mission to Mars jupyter notebook file, where I used the python library Beautiful Soup to scrape various webpages to get the information about Mars that I wanted. I then took these functions and put them into a file called "scrape_mars.py". After this, I made a file called "app.py" that would utilize Flask to set up a webpage where one could retrieve and view all the information about Mars. The user simply has to click a button on the webpage and all the scraping functions will be run, the information obtained was stored in Mongo DB, and then the information was displayed on the webpage in a way that was more visually appealing to the reader. Examples of how the webpage would finally look can be seen below.
 
 ![shot1.png](Missions_to_Mars/screenshots/shot1.png)
